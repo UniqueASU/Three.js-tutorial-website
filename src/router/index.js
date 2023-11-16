@@ -7,6 +7,12 @@ import References from '../components/pages/References.vue';
 import Navbar from '../components/pages/Navbar.vue';
 import OurView from '../components/pages/OurView.vue';
 import Introduction from '../components/pages/Introduction.vue';
+import Installation from '../components/pages/Installation.vue';
+import Architecture from '../components/pages/Architecture.vue';
+import DemoVideo from '../components/pages/DemoVideo.vue';
+import Walkthrough from '../components/pages/Walkthrough.vue';
+import Fundamentals from '../components/pages/Fundamentals.vue';
+
 
 
 
@@ -39,6 +45,46 @@ const router = createRouter({
       path: '/threejs',
       name: 'threejs',
       component: ThreeJS,
+      meta: {
+        layout: GetStarted
+      }
+    },
+    {
+      path: '/architecture',
+      name: 'architecture',
+      component: Architecture,
+      meta: {
+        layout: GetStarted
+      }
+    },
+    {
+      path: '/walkthrough',
+      name: 'walkthrough',
+      component: Walkthrough,
+      meta: {
+        layout: GetStarted
+      }
+    },
+    {
+      path: '/fundamentals',
+      name: 'fundamentals',
+      component: Fundamentals,
+      meta: {
+        layout: GetStarted
+      }
+    },
+    {
+      path: '/demovideo',
+      name: 'demovideo',
+      component: DemoVideo,
+      meta: {
+        layout: GetStarted
+      }
+    },
+    {
+      path: '/installation',
+      name: 'installation',
+      component: Installation,
       meta: {
         layout: GetStarted
       }

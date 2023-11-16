@@ -1,16 +1,43 @@
 <script setup>
+import { ref } from 'vue';
 import Navbar from './pages/Navbar.vue';
-</script>
+import { useRouter } from 'vue-router';
 
+const selectedSection = ref(null);
+    const selectedSubsection = ref(null);
+    const router = useRouter();
+
+    const selectSection = (section) => {
+      section === 'ThreeJs' ? router.push('/architecture') : router.push(section.toLowerCase());
+      selectedSection.value = section;
+      selectedSubsection.value = null; 
+    };
+
+    const displaySubsection = (subsection) => {
+      subsection !=='Buildcube' && router.push(subsection.toLowerCase())
+      subsection === 'Buildcube' && router.push('/walkthrough')
+      selectedSubsection.value = subsection;
+    };
+</script>
 
 <template>
  <Navbar/>
   <div class="content">
     <div class="sidebar">
-      <router-link to="/introduction">Introduction</router-link>
-      <router-link to="/threejs">Three JS</router-link>
+      <li @click="selectSection('Introduction')">Introduction</li>
+      <li @click="selectSection('ThreeJs')">Three.js</li>
+        <ul class="subheadings" v-if="selectedSection === 'ThreeJs'">
+          <li @click="displaySubsection('Architecture')">Architecture</li>
+          <li @click="displaySubsection('Installation')">Get Started</li>
+          <li @click="displaySubsection('Fundamentals')">Fundamentals</li>
+          <li @click="displaySubsection('Buildcube')">Building cube with Three.js</li>
+          <ul class="subheadings" v-if="selectedSubsection === 'Buildcube' || selectedSubsection === 'Walkthrough' || selectedSubsection === 'demovideo' ">
+            <li @click="displaySubsection('Walkthrough')">Walkthrough</li>
+            <li @click="displaySubsection('demovideo')">Demo video</li>
+          </ul>
+        </ul>
     </div>
-    <div  class="right-content" >
+    <div  class="right-content">
       <slot>
       </slot>
     </div>
@@ -74,14 +101,24 @@ a {
   width: 20%;
   height: 100vh;
   list-style-type: none;
+  overflow: auto;
 }
 
 .sidebar li {
   color: white;
-  padding: 20px;
+  padding: 10px;
+  padding-left: 40px;
   widows: 100%;
   font-weight: bold;
+  list-style-type: none;
 }
+
+.subheadings li{
+  font-size: 14px;
+  padding: 5px;
+  font-weight: 500;
+}
+
 
 .sidebar li:hover {
   background-color: hsla(160, 100%, 37%, 1);
@@ -92,9 +129,13 @@ a {
   color: white;
   font-weight: bold;
   text-align: center;
-  padding: 20px;
-
 }
+
+.right-content {
+  width: 80%;
+}
+
+
 </style>
   
  
