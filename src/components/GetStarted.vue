@@ -35,6 +35,9 @@ const selectedSection = ref(null);
             <li @click="displaySubsection('Walkthrough')">Walkthrough</li>
             <li @click="displaySubsection('demovideo')">Demo video</li>
           </ul>
+          <li @click="displaySubsection('thescene')">The Scene</li>
+          <li @click="displaySubsection('thecamera')">The Camera</li>
+          <li @click="displaySubsection('therenderer')">The Renderer</li>
         </ul>
     </div>
     <div  class="right-content">
