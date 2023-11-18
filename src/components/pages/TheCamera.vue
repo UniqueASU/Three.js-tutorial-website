@@ -29,10 +29,18 @@
             start and stop being rendered. Objects closer than the near plane or farther than the far plane won't
             be rendered.</li>
         </ul>
-        <li>Example: Creating a perspective camera with a 75-degree field of view, aspect ratio based on the window
-          size, and near and far clipping planes of 0.1 and 1000 units, respectively:</li>
+        <li>Together, the above four parameters are used to create a bounded region of space which we call a viewing frustum.</li>
+        <img src="/frustum.png" alt="Perspective frustum" width="500" height="333">
+        <li><strong>Example: </strong>Creating a perspective camera with a 35-degree field of view, aspect ratio based on the window
+          size, and near and far clipping planes of 0.1 and 100 units, respectively:</li>
         <div class="code-snippet">
-          <code>const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);</code>
+          <code>// Create a camera<br>
+            const fov = 35; // AKA Field of View<br>
+            const aspect = window.innerWidth / window.innerHeight;<br>
+            const near = 0.1; // the near clipping plane<br>
+            const far = 100; // the far clipping plane<br>
+            <br>
+            const camera = new PerspectiveCamera(fov, aspect, near, far);</code>
         </div>
       </ul>
       <li><strong>Orthographic Projection</strong></li>
@@ -47,12 +55,15 @@
               the area that will be rendered.</li>
           <li>Near and Far Clipping Planes: Similar to the perspective camera, they define the visible range of the scene.</li>
         </ul>
-        <li>Creating an orthographic camera where the view extends from -5 to 5 units horizontally, 3 to -3 units
+        <li><strong>Example: </strong>Creating an orthographic camera where the view extends from -5 to 5 units horizontally, 3 to -3 units
           vertically, with near and far clipping planes:</li>
           <div class="code-snippet">
             <code>const camera = new THREE.OrthographicCamera(-5, 5, 3, -3, 0.1, 100);</code>
           </div>
       </ul>
+      <li><strong>The OrthographicCamera and PerspectiveCamera in action</strong></li>
+      <br>
+      <iframe title="The OrthographicCamera and PerspectiveCamera in action" width="100%" height="500" src="https://threejs.org/examples/webgl_camera.html" importance="low" loading="lazy" sandbox="allow-scripts"></iframe>
     </ol>
 
     <br>
@@ -104,6 +115,16 @@
 
 strong {
   font-weight: bold;
+}
+
+img {
+  display: block;
+  margin: 20px auto;
+  max-width: 100%;
+  height: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
 }
 
 

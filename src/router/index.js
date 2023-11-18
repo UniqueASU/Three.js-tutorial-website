@@ -15,7 +15,7 @@ import Fundamentals from '../components/pages/Fundamentals.vue';
 import TheScene from "../components/pages/TheScene.vue";
 import TheRenderer from "../components/pages/TheRenderer.vue";
 import TheCamera from "../components/pages/TheCamera.vue";
-
+import Mesh from "../components/pages/Mesh.vue";
 
 
 
@@ -125,6 +125,14 @@ const router = createRouter({
       path: '/thecamera',
       name: 'thecamera',
       component: TheCamera,
+      meta: {
+        layout: GetStarted
+      }
+    },
+    {
+      path: '/mesh',
+      name: 'mesh',
+      component: Mesh,
       meta: {
         layout: GetStarted
       }
