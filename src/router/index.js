@@ -12,7 +12,12 @@ import Architecture from '../components/pages/Architecture.vue';
 import DemoVideo from '../components/pages/DemoVideo.vue';
 import Walkthrough from '../components/pages/Walkthrough.vue';
 import Fundamentals from '../components/pages/Fundamentals.vue';
-
+import TheScene from "../components/pages/TheScene.vue";
+import TheRenderer from "../components/pages/TheRenderer.vue";
+import TheCamera from "../components/pages/TheCamera.vue";
+import Mesh from "../components/pages/Mesh.vue";
+import Geometries from "@/components/pages/Geometries.vue";
+import Materials from "@/components/pages/Materials.vue";
 
 
 
@@ -101,6 +106,54 @@ const router = createRouter({
       path: '/getstarted',
       name: 'getstarted',
       component: GetStarted
+    },
+    {
+      path: '/thescene',
+      name: 'thescene',
+      component: TheScene,
+      meta: {
+        layout: GetStarted
+      }
+    },
+    {
+      path: '/therenderer',
+      name: 'therenderer',
+      component: TheRenderer,
+      meta: {
+        layout: GetStarted
+      }
+    },
+    {
+      path: '/thecamera',
+      name: 'thecamera',
+      component: TheCamera,
+      meta: {
+        layout: GetStarted
+      }
+    },
+    {
+      path: '/mesh',
+      name: 'mesh',
+      component: Mesh,
+      meta: {
+        layout: GetStarted
+      }
+    },
+    {
+      path: '/geometries',
+      name: 'geometries',
+      component: Geometries,
+      meta: {
+        layout: GetStarted
+      }
+    },
+    {
+      path: '/materials',
+      name: 'materials',
+      component: Materials,
+      meta: {
+        layout: GetStarted
+      }
     }
   ]
 })

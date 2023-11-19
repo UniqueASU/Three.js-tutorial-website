@@ -2,6 +2,7 @@
 import { ref } from 'vue';
 import Navbar from './pages/Navbar.vue';
 import { useRouter } from 'vue-router';
+import Geometries from "@/components/pages/Geometries.vue";
 
 const selectedSection = ref(null);
     const selectedSubsection = ref(null);
@@ -35,6 +36,12 @@ const selectedSection = ref(null);
             <li @click="displaySubsection('Walkthrough')">Walkthrough</li>
             <li @click="displaySubsection('demovideo')">Demo video</li>
           </ul>
+          <li @click="displaySubsection('thescene')">The Scene</li>
+          <li @click="displaySubsection('thecamera')">The Camera</li>
+          <li @click="displaySubsection('therenderer')">The Renderer</li>
+          <li @click="displaySubsection('mesh')">Mesh</li>
+          <li @click="displaySubsection('geometries')">Geometries</li>
+          <li @click="displaySubsection('materials')">Materials</li>
         </ul>
     </div>
     <div  class="right-content">
