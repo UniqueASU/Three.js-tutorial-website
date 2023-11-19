@@ -5,37 +5,40 @@ import { useRouter } from 'vue-router';
 import Geometries from "@/components/pages/Geometries.vue";
 
 const selectedSection = ref(null);
-    const selectedSubsection = ref(null);
-    const router = useRouter();
+const selectedSubsection = ref(null);
+const router = useRouter();
 
-    const selectSection = (section) => {
-      section === 'ThreeJs' ? router.push('/architecture') : router.push(section.toLowerCase());
-      selectedSection.value = section;
-      selectedSubsection.value = null; 
-    };
+const selectSection = (section) => {
+  section === 'ThreeJs' ? router.push('/architecture') : router.push(section.toLowerCase());
+  selectedSection.value = section;
+  selectedSubsection.value = null;
+};
 
-    const displaySubsection = (subsection) => {
-      subsection !=='Buildcube' && router.push(subsection.toLowerCase())
-      subsection === 'Buildcube' && router.push('/walkthrough')
-      selectedSubsection.value = subsection;
-    };
+const displaySubsection = (subsection) => {
+  subsection !== 'Buildcube' && router.push(subsection.toLowerCase())
+  subsection === 'Buildcube' && router.push('/walkthrough')
+  selectedSubsection.value = subsection;
+};
 </script>
 
 <template>
- <Navbar/>
+  <Navbar />
   <div class="content">
     <div class="sidebar">
       <li @click="selectSection('Introduction')">Introduction</li>
       <li @click="selectSection('ThreeJs')">Three.js</li>
-        <ul class="subheadings" v-if="selectedSection === 'ThreeJs'">
-          <li @click="displaySubsection('Architecture')">Architecture</li>
-          <li @click="displaySubsection('Installation')">Get Started</li>
-          <li @click="displaySubsection('Fundamentals')">Fundamentals</li>
-          <li @click="displaySubsection('Buildcube')">Building cube with Three.js</li>
-          <ul class="subheadings" v-if="selectedSubsection === 'Buildcube' || selectedSubsection === 'Walkthrough' || selectedSubsection === 'demovideo' ">
-            <li @click="displaySubsection('Walkthrough')">Walkthrough</li>
-            <li @click="displaySubsection('demovideo')">Demo video</li>
-          </ul>
+      <ul class="subheadings" v-if="selectedSection === 'ThreeJs'">
+        <li @click="displaySubsection('Architecture')">Architecture</li>
+        <li @click="displaySubsection('Installation')">Get Started</li>
+        <li @click="displaySubsection('Fundamentals')">Fundamentals</li>
+        <ul class="subheadings"
+          v-if="selectedSubsection === 'Fundamentals' || selectedSubsection === 'thescene' 
+          || selectedSubsection === 'thecamera'
+          || selectedSubsection === 'therenderer'
+          || selectedSubsection === 'mesh'
+          || selectedSubsection === 'geometries'
+          || selectedSubsection === 'materials'
+          ">
           <li @click="displaySubsection('thescene')">The Scene</li>
           <li @click="displaySubsection('thecamera')">The Camera</li>
           <li @click="displaySubsection('therenderer')">The Renderer</li>
@@ -43,8 +46,17 @@ const selectedSection = ref(null);
           <li @click="displaySubsection('geometries')">Geometries</li>
           <li @click="displaySubsection('materials')">Materials</li>
         </ul>
+        <li @click="displaySubsection('Buildcube')">Building cube with Three.js</li>
+        <ul class="subheadings"
+          v-if="selectedSubsection === 'Buildcube' || selectedSubsection === 'Walkthrough' || selectedSubsection === 'demovideo'">
+          <li @click="displaySubsection('Walkthrough')">Walkthrough</li>
+          <li @click="displaySubsection('demovideo')">Demo video</li>
+        </ul>
+       
+
+      </ul>
     </div>
-    <div  class="right-content">
+    <div class="right-content">
       <slot>
       </slot>
     </div>
@@ -54,11 +66,13 @@ const selectedSection = ref(null);
 <style scoped>
 .content {
   display: flex;
+  min-height: 100vh;
 }
 
 a {
   display: block;
 }
+
 .navbar {
   list-style: none;
   height: 50px;
@@ -74,12 +88,14 @@ a {
 
 
 }
+
 .router-link-exact-active {
-   background-color: hsla(160, 100%, 37%, 1);;
-   cursor: pointer;
-   width: 100%;
-   display: block;
- }
+  background-color: hsla(160, 100%, 37%, 1);
+  ;
+  cursor: pointer;
+  width: 100%;
+  display: block;
+}
 
 .content-body {
   padding: 20px;
@@ -106,7 +122,6 @@ a {
 .sidebar {
   background-color: #5cad53;
   width: 20%;
-  height: 100vh;
   list-style-type: none;
   overflow: auto;
 }
@@ -120,7 +135,7 @@ a {
   list-style-type: none;
 }
 
-.subheadings li{
+.subheadings li {
   font-size: 14px;
   padding: 5px;
   font-weight: 500;
@@ -141,8 +156,6 @@ a {
 .right-content {
   width: 80%;
 }
-
-
 </style>
   
  

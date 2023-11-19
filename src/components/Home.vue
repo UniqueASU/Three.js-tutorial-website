@@ -13,7 +13,7 @@ import HomeTitle from './HomeTitle.vue';
       <HomeTitle msg="Three.js" />
 
       <nav>
-        <router-link to="/getstarted">Get started</router-link>
+        <router-link to="/introduction">Get started</router-link>
       </nav>
     </div>
   </header>
