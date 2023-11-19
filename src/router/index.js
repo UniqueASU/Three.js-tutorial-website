@@ -16,6 +16,8 @@ import TheScene from "../components/pages/TheScene.vue";
 import TheRenderer from "../components/pages/TheRenderer.vue";
 import TheCamera from "../components/pages/TheCamera.vue";
 import Mesh from "../components/pages/Mesh.vue";
+import Geometries from "@/components/pages/Geometries.vue";
+import Materials from "@/components/pages/Materials.vue";
 
 
 
@@ -137,6 +139,22 @@ const router = createRouter({
         layout: GetStarted
       }
     },
+    {
+      path: '/geometries',
+      name: 'geometries',
+      component: Geometries,
+      meta: {
+        layout: GetStarted
+      }
+    },
+    {
+      path: '/materials',
+      name: 'materials',
+      component: Materials,
+      meta: {
+        layout: GetStarted
+      }
+    }
   ]
 })
 
