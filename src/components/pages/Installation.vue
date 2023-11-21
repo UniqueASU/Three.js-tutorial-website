@@ -46,8 +46,6 @@
       </code>
     </pre>
 
-    <h3 class="analysis-heading">public/</h3>
-
     <p class="view-content">
       Now that the basic project structure is in place, let's explore how to run the project locally and access it through a web browser.
     </p>
@@ -84,7 +82,10 @@
       The initial page will be blank, indicating you are ready to create a scene.
     </p>
 
-    <h3 class="analysis-heading">Option 2: Import from a CDN</h3>
+    <h3 class="analysis-heading">Option 2: Import from a CDN </h3>
+    <p class="view-content">
+      Note: In the demo of the application we are importing three.js from CDN itself.
+    </p>
 
     <h4 class="analysis-heading">Development</h4>
 
