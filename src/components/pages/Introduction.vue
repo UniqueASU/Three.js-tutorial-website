@@ -14,6 +14,14 @@
             animations, and interactive content.
         </p>
 
+        <h2 class="subtitle">History</h2>
+        <p class="paragraph">
+            Three.js was created by Ricardo Cabello, also known as "Mr.doob," in 2010. The project started as an experiment to explore the capabilities of WebGL, a web standard for rendering 
+            3D graphics in browsers without the need for plugins. The library gained popularity quickly due to its simplicity and powerful features. Its early versions focused on providing a straightforward API for creating and manipulating 3D scenes, making it 
+            accessible to developers with varying levels of expertise. The open-source nature of Three.js encouraged contributions from the community. Numerous extensions, plugins, and tutorials were developed, further enriching the ecosystem and helping developers explore new possibilities.
+            The library stays relevant by adapting to emerging web technologies and addressing the evolving needs of the 3D web development community.
+        </p>
+
         <h2 class="subtitle">Key Features of Three.js</h2>
         <ul class="feature-list">
             <li>Cross-Browser Compatibility:</li>
