@@ -52,7 +52,7 @@ const displaySubsection = (subsection) => {
           <li :class="{ 'active': activeItem === 'geometries' }" @click="displaySubsection('geometries')">Geometries</li>
           <li :class="{ 'active': activeItem === 'materials' }" @click="displaySubsection('materials')">Materials</li>
         </ul>
-        <li @click="displaySubsection('Buildcube')">Building cube with Three.js</li>
+        <li @click="displaySubsection('Buildcube')">Building an App with Three.js</li>
         <ul class="subheadings"
           v-if="selectedSubsection === 'Buildcube' || selectedSubsection === 'Walkthrough' || selectedSubsection === 'demovideo'">
           <li :class="{ 'active': activeItem === 'Walkthrough' || activeItem === 'Buildcube' }" @click="displaySubsection('Walkthrough')">Walkthrough</li>
