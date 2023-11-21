@@ -4,56 +4,43 @@
         <p class="paragraph">
             Before we get started, let's take a look at the structure of a Three.js app and understand the components that
             connect together and make the Three.js app
-            <img src="@/assets/architecture.png" alt="Three.js App Diagram">
+            <img src="/architecture.png" alt="Three.js App Diagram" width="700" height="333">
         </p>
 
         <p>
-            Now there are a few things to notice about this diagram:
 
         <ul>
-            <li><strong>Renderer</strong>: The Renderer serves as a central component in three.js, functioning as the
-                primary object. It takes a Scene and a Camera as inputs and renders the part of the 3D scene visible within
-                the camera's frustum onto a canvas.</li>
+            <li><strong>Renderer</strong>: This is typically the top-level component that takes the scene graph and
+              camera information to render the visual representation of the scene onto a screen or into an image.</li>
 
-            <li><strong>Scenegraph</strong>: The scenegraph is akin to a tree structure, comprising various elements like
-                Scene, multiple Mesh objects, Light objects, Group, Object3D, and Camera objects. The Scene object acts as
-                the root of the scenegraph, defining properties such as background color and fog. This hierarchical
-                structure dictates where objects are positioned and oriented, with children relative to their parent. For
-                instance, the wheels of a car might be children of the car, ensuring that moving or orienting the car also
-                affects the wheels.</li>
+            <li><strong>Scenegraph</strong>: The scene is the root of the graph where all objects are placed. It
+              serves as a container for all the objects, lights, and cameras.</li>
 
-            <li><strong>Camera</strong>: Unlike other objects, a Camera in three.js doesn't have to be part of the
-                scenegraph to function. It can exist independently or as a child of another object, allowing it to move and
-                orient relative to its parent. There's an example of incorporating multiple Camera objects in a scenegraph
-                at the end of the scenegraphs article.</li>
+            <li><strong>Camera</strong>: The camera defines the point of view from which the scene will be rendered.
+              It captures the view based on its parameters like field of view, aspect ratio, near and far clipping planes.</li>
 
-            <li><strong>Mesh</strong>: Mesh objects are responsible for rendering specific Geometry with a designated
-                Material. Both Material and Geometry objects can be shared among multiple Mesh objects. For example, drawing
-                two blue cubes in different locations might require two Mesh objects for position and orientation, while
-                using a single Geometry and Material for both. Both Mesh objects can reference the same Geometry and
-                Material objects.</li>
+            <li><strong>Mesh</strong>: A mesh is a visible object in the 3D space. It is composed of vertices, edges,
+              and faces that define its shape in 3D.</li>
 
-            <li><strong>Geometry</strong>: Geometry objects define the vertex data of various geometries, such as spheres,
-                cubes, planes, animals, or buildings. Three.js offers built-in geometry primitives, and custom geometries
-                can be created or loaded from files.
+            <li><strong>Object3D</strong>: This is a base class for most objects in three.js and includes any item that
+              can be placed in the scene. It's a generic container object for all renderable objects.</li>
 
-            </li>
+            <li><strong>Group</strong>: This is a specific instance of Object3D which can contain multiple child objects,
+              allowing them to be controlled as a single entity.</li>
 
-            <li><strong>Material</strong>: Material objects dictate surface properties for drawing geometry, encompassing
-                aspects like color and shininess. Materials may reference one or more Texture objects, allowing, for
-                instance, wrapping an image onto a geometry's surface.</li>
+            <li><strong>Light</strong>: Lights affect how materials appear when rendered in the scene, simulating real-world
+              lighting conditions.</li>
 
-            <li><strong>Texture</strong>: Texture objects generally represent images, sourced from image files, generated
-                from a canvas, or rendered from another scene.</li>
+            <li><strong>Geometry</strong>: Defines the shape of the object. It is a collection of points (vertices) and
+              the lines connecting them (edges).</li>
 
-            <li><strong>Light</strong>: Light objects represent different kinds of lights.</li>
+            <li><strong>Material</strong>: Materials define the appearance of the mesh. They describe the color, how it
+              reflects light, and whether it is transparent, among other visual characteristics.</li>
+
+            <li><strong>Texture</strong>: Textures are images mapped onto the surfaces of your geometry. They add detail
+              to the materials.</li>
+
         </ul>
-        </p>
-
-        <p>
-            I guess it can still be pretty abstract at the moment. I have to draw you a picture to make it more concrete. Ok, I'll use my drawing skills then.
-            <img src="@/assets/arch1.png" alt="Three.js App Diagram">
-
         </p>
     </div>
 </template>
@@ -71,20 +58,13 @@
   font-weight: bold;
   margin-bottom: 20px;
 }
-
-.paragraph {
-  line-height: 1.5;
-  margin-bottom: 15px;
-}
-
-li {
-  font-weight: bold;
-  margin-top: 10px;
-  padding-bottom: 20px;
-}
-
-.feature-description {
-  margin-bottom: 15px;
+.code-snippet {
+  background-color: #eee;
+  border-left: 3px solid #f36d33;
+  color: #666;
+  font-family: monospace;
+  padding: 10px 20px;
+  overflow: auto;
 }
 
 img {
@@ -96,4 +76,19 @@ img {
   border-radius: 4px;
   padding: 5px;
 }
+
+strong {
+  font-weight: bold;
+}
+
+.feature-list li {
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.feature-description {
+  margin-bottom: 15px;
+}
 </style>
+<script setup>
+</script>
