@@ -7,6 +7,7 @@ import References from '../components/pages/References.vue';
 import Navbar from '../components/pages/Navbar.vue';
 import OurView from '../components/pages/OurView.vue';
 import Introduction from '../components/pages/Introduction.vue';
+import AdditonalResources from '../components/pages/AdditionalResources.vue';
 import Installation from '../components/pages/Installation.vue';
 import Architecture from '../components/pages/Architecture.vue';
 import DemoVideo from '../components/pages/DemoVideo.vue';
@@ -84,6 +85,14 @@ const router = createRouter({
       component: DemoVideo,
       meta: {
         layout: GetStarted
+      }
+    },
+    {
+      path: '/additionalResources',
+      name: 'additionalResources',
+      component: AdditonalResources,
+      meta: {
+        layout: Navbar
       }
     },
     {

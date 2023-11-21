@@ -18,9 +18,10 @@ function toggleSection(heading) {
     <ul class="navbar">
       <li :class="{ 'active': activeItem === 'Home' }" @click="toggleSection('')">Home</li>
       <li :class="{ 'active': activeItem === 'introduction' }" @click="toggleSection('introduction')">Introduction</li>
-      <li :class="{ 'active': activeItem === 'Our View' }" @click="toggleSection('ourview')">Our View</li>
-      <li :class="{ 'active': activeItem === 'References' }" @click="toggleSection('references')">References
+      <li :class="{ 'active': activeItem === 'ourview' }" @click="toggleSection('ourview')">Our View</li>
+      <li :class="{ 'active': activeItem === 'references' }" @click="toggleSection('references')">References
       </li>
+      <li :class="{ 'active': activeItem === 'additionalResources' }" @click="toggleSection('additionalResources')">Additional Resources</li>
     </ul>
   </nav>
   <div>
