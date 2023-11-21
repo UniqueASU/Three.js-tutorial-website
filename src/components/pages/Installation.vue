@@ -148,7 +148,6 @@
   .main-heading {
     font-size: 2em;
     font-weight: bold;
-    text-align: center;
     margin-bottom: 20px;
   }
 
