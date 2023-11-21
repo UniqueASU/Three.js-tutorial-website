@@ -12,7 +12,7 @@ import HomeTitle from './HomeTitle.vue';
     <div class="wrapper">
       <HomeTitle msg="Three.js" />
 
-      <nav>
+      <nav class="getstarted">
         <router-link to="/introduction">Get started</router-link>
       </nav>
     </div>
@@ -25,6 +25,11 @@ import HomeTitle from './HomeTitle.vue';
 </template>
 
 <style scoped>
+
+.getstarted {
+  font-size: 18px;
+  font-weight: bold;
+}
 .heading {
     width:70%;
 }
