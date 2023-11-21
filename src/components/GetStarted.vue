@@ -20,6 +20,7 @@ const selectSection = (section) => {
 const displaySubsection = (subsection) => {
   subsection !== 'Buildcube' && router.push(subsection.toLowerCase())
   subsection === 'Buildcube' && router.push('/walkthrough')
+  subsection === 'Fundamentals' && router.push('/thescene')
   selectedSubsection.value = subsection;
   activeItem.value = subsection;
 
@@ -37,7 +38,6 @@ const displaySubsection = (subsection) => {
         <li :class="{ 'active': activeItem === 'Installation' }" @click="displaySubsection('Installation')">Get Started</li>
         <li :class="{ 'active': activeItem === 'Fundamentals' }" @click="displaySubsection('Fundamentals')">Fundamentals</li>
         <ul class="subheadings"
-        
           v-if="selectedSubsection === 'Fundamentals' || selectedSubsection === 'thescene' 
           || selectedSubsection === 'thecamera'
           || selectedSubsection === 'therenderer'

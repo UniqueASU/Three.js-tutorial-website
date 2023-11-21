@@ -50,7 +50,7 @@
   
   <style scoped>
     .main-content {
-      padding: 40px 60px;
+      padding: 40px 30px;
       margin: 0px 20px;
       font-family: 'Arial', sans-serif;
       font-size: 1.2em;

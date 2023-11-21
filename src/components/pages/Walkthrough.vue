@@ -32,6 +32,7 @@
     <br>
     <h3>visual1.html</h3>
     <img alt="visual1.html" src="/demoVisual1.png" width="700" height="700" />
+    <p><i>We are importing three.js library from CDN in the script tag as seen in the image above.</i></p>
     <p><i>The visual1.html file acts as a canvas for our first three.js model which is defined in the script client1.js</i></p>
     <br>
     <h3>client1.js</h3>
@@ -49,6 +50,7 @@
     <br>
     <h3>visual2.html</h3>
     <img alt="visual2.html" src="/demoVisual2.png" width="700" height="700" />
+    <p><i>We are importing three.js library from CDN in the script tag as seen in the image above.</i></p>
     <p><i>The visual2.html file acts as a canvas for our second three.js model which is defined in the script client2.js</i></p>
     <br>
     <h3>client2.js</h3>
@@ -68,7 +70,9 @@
     <br>
     <h3>visual3.html</h3>
     <img alt="visual3.html" src="/demoVisual3.png" width="700" height="700" />
+    <p><i>We are importing three.js library from CDN in the script tag as seen in the image above.</i></p>
     <p><i>The visual3.html file acts as a canvas for our third three.js model which is defined in the script client3.js</i></p>
+
     <br>
     <h3>client3.js</h3>
     <img alt="client3.js" src="/demoClient3.1.png" width="1000" height="1000" />
